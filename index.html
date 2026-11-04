@@ -2,160 +2,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BURKINA METIER BF</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7f5;
-      color: #222;
-    }
-    header {
-      background: #087443;
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-    }
-    header h1 { margin: 0 0 10px; }
-    nav {
-      background: #064d30;
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px;
-      font-weight: bold;
-    }
-    .hero {
-      text-align: center;
-      padding: 45px 15px;
-      background: white;
-    }
-    .hero h2 { color: #087443; }
-    .search {
-      width: 90%;
-      max-width: 450px;
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 18px;
-    }
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #0001;
-    }
-    .card h3 { color: #087443; }
-    button {
-      background: #087443;
-      color: white;
-      border: 0;
-      padding: 11px 17px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    footer {
-      background: #064d30;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      margin-top: 30px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BURKINA METIER BF</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7f5;color:#222}
+header{background:#087443;color:white;text-align:center;padding:30px 15px}
+header h1{margin:0;font-size:30px}
+nav{background:#064d30;padding:15px;text-align:center;position:sticky;top:0}
+nav a{color:white;text-decoration:none;margin:10px;font-weight:bold}
+.hero{text-align:center;padding:35px 15px;background:white}
+.hero h2{color:#087443}
+input{width:90%;max-width:500px;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+main{max-width:1100px;margin:auto;padding:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 8px #0001}
+.card h3{color:#087443}
+button{background:#087443;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer}
+button:hover{background:#064d30}
+.detail{display:none;background:white;padding:25px;border-radius:12px;margin-top:20px}
+footer{background:#064d30;color:white;text-align:center;padding:25px;margin-top:35px}
+small{color:#666}
+</style>
 </head>
 <body>
-  <header>
-    <h1>🇧🇫 BURKINA METIER BF</h1>
-    <p>Découvre les métiers. Apprends. Construis ton avenir.</p>
-  </header>
-
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#metiers">Métiers</a>
-    <a href="#formations">Formations</a>
-    <a href="#debouches">Débouchés</a>
-  </nav>
-
-  <section class="hero" id="accueil">
-    <h2>Quel métier veux-tu découvrir ?</h2>
-    <p>Explore les métiers et les possibilités de formation au Burkina Faso.</p>
-    <input class="search" id="recherche" placeholder="Rechercher un métier...">
-  </section>
-
-  <main>
-    <section id="metiers">
-      <h2>Découvrir les métiers</h2>
-      <div class="grid" id="liste">
-        <article class="card">
-          <h3>Informatique</h3>
-          <p>Technicien informatique, développeur, administrateur réseau.</p>
-        </article>
-        <article class="card">
-          <h3>Agriculture</h3>
-          <p>Agriculteur, éleveur, technicien agricole.</p>
-        </article>
-        <article class="card">
-          <h3>Bâtiment</h3>
-          <p>Maçon, électricien, plombier, menuisier.</p>
-        </article>
-        <article class="card">
-          <h3>Communication</h3>
-          <p>Journaliste, cameraman, monteur vidéo.</p>
-        </article>
-        <article class="card">
-          <h3>Santé</h3>
-          <p>Infirmier, sage-femme, laborantin.</p>
-        </article>
-        <article class="card">
-          <h3>Commerce</h3>
-          <p>Commerçant, vendeur, gestionnaire.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="formations">
-      <h2>Connaître les formations</h2>
-      <div class="card">
-        <p>Découvre les établissements, les conditions d'accès et les formations nécessaires pour exercer chaque métier.</p>
-      </div>
-    </section>
-
-    <section id="debouches">
-      <h2>Les débouchés professionnels</h2>
-      <div class="card">
-        <p>Découvre les possibilités d'emploi, de stage et de création d'entreprise au Burkina Faso.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>BURKINA METIER BF © 2026</p>
-    <p>Une plateforme pour découvrir son avenir professionnel.</p>
-  </footer>
-
-  <script>
-    document.getElementById("recherche").addEventListener("input", function() {
-      const mot = this.value.toLowerCase();
-      document.querySelectorAll("#liste .card").forEach(function(carte) {
-        carte.style.display = carte.textContent.toLowerCase().includes(mot) ? "" : "none";
-      });
-    });
-  </script>
+<header>
+<h1>🇧🇫 BURKINA METIER BF</h1>
+<p>Découvre les métiers. Apprends. Construis ton avenir.</p>
+</header>
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#metiers">Métiers</a>
+<a href="#formations">Formations</a>
+<a href="#debouches">Débouchés</a>
+</nav>
+<section class="hero" id="accueil">
+<h2>Quel métier souhaites-tu découvrir ?</h2>
+<p>Explore 50 métiers et découvre les possibilités professionnelles au Burkina Faso.</p>
+<input id="search" placeholder="Rechercher un métier..." oninput="afficher()">
+</section>
+<main>
+<section id="metiers">
+<h2>Les 50 métiers</h2>
+<p>Clique sur un métier pour découvrir sa fiche.</p>
+<div class="grid" id="liste"></div>
+<div class="detail" id="detail"></div>
+</section>
+<section id="formations">
+<h2>Les formations</h2>
+<div class="card">
+<p>Pour chaque métier, recherche les établissements agréés, les conditions d'accès, les diplômes et les durées de formation au Burkina Faso.</p>
+</div>
+</section>
+<section id="debouches">
+<h2>Les débouchés professionnels</h2>
+<div class="card">
+<p>Les métiers peuvent ouvrir des possibilités d'emploi salarié, de stage ou de création d'entreprise.</p>
+</div>
+</section>
+</main>
+<footer>
+<p>BURKINA METIER BF © 2026</p>
+<p>Une plateforme gratuite pour découvrir son avenir professionnel.</p>
+</footer>
+<script>
+const categories = {
+"Informatique et numérique":[
+"Technicien informatique","Développeur web","Administrateur réseau","Technicien en cybersécurité","Technicien de maintenance informatique"],
+"Santé":[
+"Infirmier","Sage-femme","Laborantin","Pharmacien","Technicien de santé"],
+"Agriculture et élevage":[
+"Agriculteur","Éleveur","Technicien agricole","Vétérinaire","Pisciculteur"],
+"Bâtiment et travaux publics":[
+"Maçon","Électricien bâtiment","Plombier","Menuisier","Conducteur de travaux"],
+"Communication et médias":[
+"Journaliste","Cameraman","Monteur vidéo","Photographe","Technicien audiovisuel"],
+"Commerce et gestion":[
+"Commerçant","Comptable","Secrétaire","Gestionnaire","Agent commercial"],
+"Électricité et énergie":[
+"Électricien industriel","Technicien solaire","Installateur électrique","Technicien énergie","Frigoriste"],
+"Transport et mécanique":[
+"Chauffeur professionnel","Mécanicien automobile","Conducteur d'engins","Électricien automobile","Technicien moto"],
+"Artisanat":[
+"Couturier","Soudeur","Menuisier bois","Coiffeur","Bijoutier"],
+"Hôtellerie et restauration":[
+"Cuisinier","Serveur","Réceptionniste","Pâtissier","Gestionnaire hôtelier"]
+};
+let metiers=[];
+for(const categorie in categories){
+categories[categorie].forEach(nom=>metiers.push({nom,categorie}));
+}
+function afficher(){
+const recherche=document.getElementById("search").value.toLowerCase();
+const liste=document.getElementById("liste");
+liste.innerHTML="";
+metiers.filter(m=>m.nom.toLowerCase().includes(recherche)||m.categorie.toLowerCase().includes(recherche)).forEach(m=>{
+const carte=document.createElement("article");
+carte.className="card";
+const titre=document.createElement("h3");
+titre.textContent=m.nom;
+const cat=document.createElement("small");
+cat.textContent=m.categorie;
+const bouton=document.createElement("button");
+bouton.textContent="Découvrir ce métier";
+bouton.onclick=()=>ouvrir(m);
+carte.append(titre,cat,document.createElement("br"),bouton);
+liste.appendChild(carte);
+});
+}
+function ouvrir(m){
+const detail=document.getElementById("detail");
+detail.style.display="block";
+detail.innerHTML="";
+const titre=document.createElement("h2");
+titre.textContent=m.nom;
+const categorie=document.createElement("p");
+categorie.textContent="Secteur : "+m.categorie;
+const mission=document.createElement("p");
+mission.textContent="Missions : exercer les activités professionnelles propres à ce métier dans son secteur.";
+const competences=document.createElement("p");
+competences.textContent="Compétences : connaissances techniques, pratique, rigueur et sens des responsabilités.";
+const formation=document.createElement("p");
+formation.textContent="Formation : rechercher une formation professionnelle ou technique reconnue dans ce domaine au Burkina Faso.";
+const debouches=document.createElement("p");
+debouches.textContent="Débouchés : emploi en entreprise, activité indépendante ou entrepreneuriat selon les qualifications.";
+const retour=document.createElement("button");
+retour.textContent="Fermer la fiche";
+retour.onclick=()=>detail.style.display="none";
+detail.append(titre,categorie,mission,competences,formation,debouches,retour);
+detail.scrollIntoView({behavior:"smooth"});
+}
+afficher();
+</script>
 </body>
 </html>
