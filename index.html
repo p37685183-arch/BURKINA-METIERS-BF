@@ -79,7 +79,6 @@ footer{background:#064d30;color:white;text-align:center;padding:25px}
       <option>Dédougou</option>
     </select>
     <div id="resultatVille" style="margin-top:15px;"></div>
-
   </div>
 </section>
   
@@ -163,6 +162,26 @@ detail.appendChild(bouton);
 detail.scrollIntoView({behavior:"smooth"});
 }
 afficher();
+  
+function chercherVille(){
+  const ville=document.getElementById("ville").value;
+  const resultat=document.getElementById("resultatVille");
+
+  if(!ville){
+    resultat.textContent="";
+    return;
+  }
+
+  resultat.innerHTML="";
+  const titre=document.createElement("h3");
+  titre.textContent="Formations à rechercher à "+ville;
+
+  const texte=document.createElement("p");
+  texte.textContent="Consulte les centres de formation professionnelle et les établissements techniques de cette ville. Vérifie les filières proposées, les conditions d'accès et la reconnaissance des diplômes avant toute inscription.";
+
+  resultat.append(titre,texte);
+}
+
 </script>
 </body>
 </html>
