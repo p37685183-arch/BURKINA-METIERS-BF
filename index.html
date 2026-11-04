@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BURKINA METIER BF</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f5;
+      color: #222;
+    }
+    header {
+      background: #087443;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+    header h1 { margin: 0 0 10px; }
+    nav {
+      background: #064d30;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 8px;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 45px 15px;
+      background: white;
+    }
+    .hero h2 { color: #087443; }
+    .search {
+      width: 90%;
+      max-width: 450px;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 18px;
+    }
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .card h3 { color: #087443; }
+    button {
+      background: #087443;
+      color: white;
+      border: 0;
+      padding: 11px 17px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      background: #064d30;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🇧🇫 BURKINA METIER BF</h1>
+    <p>Découvre les métiers. Apprends. Construis ton avenir.</p>
+  </header>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#metiers">Métiers</a>
+    <a href="#formations">Formations</a>
+    <a href="#debouches">Débouchés</a>
+  </nav>
+
+  <section class="hero" id="accueil">
+    <h2>Quel métier veux-tu découvrir ?</h2>
+    <p>Explore les métiers et les possibilités de formation au Burkina Faso.</p>
+    <input class="search" id="recherche" placeholder="Rechercher un métier...">
+  </section>
+
+  <main>
+    <section id="metiers">
+      <h2>Découvrir les métiers</h2>
+      <div class="grid" id="liste">
+        <article class="card">
+          <h3>Informatique</h3>
+          <p>Technicien informatique, développeur, administrateur réseau.</p>
+        </article>
+        <article class="card">
+          <h3>Agriculture</h3>
+          <p>Agriculteur, éleveur, technicien agricole.</p>
+        </article>
+        <article class="card">
+          <h3>Bâtiment</h3>
+          <p>Maçon, électricien, plombier, menuisier.</p>
+        </article>
+        <article class="card">
+          <h3>Communication</h3>
+          <p>Journaliste, cameraman, monteur vidéo.</p>
+        </article>
+        <article class="card">
+          <h3>Santé</h3>
+          <p>Infirmier, sage-femme, laborantin.</p>
+        </article>
+        <article class="card">
+          <h3>Commerce</h3>
+          <p>Commerçant, vendeur, gestionnaire.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="formations">
+      <h2>Connaître les formations</h2>
+      <div class="card">
+        <p>Découvre les établissements, les conditions d'accès et les formations nécessaires pour exercer chaque métier.</p>
+      </div>
+    </section>
+
+    <section id="debouches">
+      <h2>Les débouchés professionnels</h2>
+      <div class="card">
+        <p>Découvre les possibilités d'emploi, de stage et de création d'entreprise au Burkina Faso.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>BURKINA METIER BF © 2026</p>
+    <p>Une plateforme pour découvrir son avenir professionnel.</p>
+  </footer>
+
+  <script>
+    document.getElementById("recherche").addEventListener("input", function() {
+      const mot = this.value.toLowerCase();
+      document.querySelectorAll("#liste .card").forEach(function(carte) {
+        carte.style.display = carte.textContent.toLowerCase().includes(mot) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
