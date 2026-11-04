@@ -9,10 +9,9 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f4f7f5;color:#222}
 header{background:#087443;color:white;text-align:center;padding:30px 15px}
-header h1{margin:0;font-size:30px}
 nav{background:#064d30;padding:15px;text-align:center;position:sticky;top:0}
-nav a{color:white;text-decoration:none;margin:10px;font-weight:bold}
-.hero{text-align:center;padding:35px 15px;background:white}
+nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
+.hero{text-align:center;background:white;padding:35px 15px}
 .hero h2{color:#087443}
 input{width:90%;max-width:500px;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:16px}
 main{max-width:1100px;margin:auto;padding:20px}
@@ -20,10 +19,9 @@ main{max-width:1100px;margin:auto;padding:20px}
 .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 8px #0001}
 .card h3{color:#087443}
 button{background:#087443;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer}
-button:hover{background:#064d30}
-.detail{display:none;background:white;padding:25px;border-radius:12px;margin-top:20px}
-footer{background:#064d30;color:white;text-align:center;padding:25px;margin-top:35px}
-small{color:#666}
+.detail{display:none;background:white;padding:25px;border-radius:12px;margin-top:20px;line-height:1.7}
+section{margin-bottom:35px}
+footer{background:#064d30;color:white;text-align:center;padding:25px}
 </style>
 </head>
 <body>
@@ -38,76 +36,71 @@ small{color:#666}
 <a href="#debouches">Débouchés</a>
 </nav>
 <section class="hero" id="accueil">
-<h2>Quel métier souhaites-tu découvrir ?</h2>
-<p>Explore 50 métiers et découvre les possibilités professionnelles au Burkina Faso.</p>
+<h2>Prépare ton avenir professionnel</h2>
+<p>Découvre 50 métiers et les parcours de formation possibles au Burkina Faso.</p>
 <input id="search" placeholder="Rechercher un métier..." oninput="afficher()">
 </section>
 <main>
 <section id="metiers">
-<h2>Les 50 métiers</h2>
-<p>Clique sur un métier pour découvrir sa fiche.</p>
+<h2>Découvrir les 50 métiers</h2>
 <div class="grid" id="liste"></div>
 <div class="detail" id="detail"></div>
 </section>
 <section id="formations">
-<h2>Les formations</h2>
+<h2>Comprendre les formations</h2>
 <div class="card">
-<p>Pour chaque métier, recherche les établissements agréés, les conditions d'accès, les diplômes et les durées de formation au Burkina Faso.</p>
+<h3>Comment choisir une formation ?</h3>
+<p>1. Vérifie les conditions d'accès.</p>
+<p>2. Renseigne-toi sur la durée de formation.</p>
+<p>3. Vérifie le diplôme ou la qualification délivrée.</p>
+<p>4. Demande si la formation comprend des stages pratiques.</p>
+<p>5. Vérifie la reconnaissance de l'établissement auprès des autorités compétentes.</p>
+<p><strong>Important :</strong> les parcours varient selon les métiers et les établissements. Les informations doivent être confirmées avant toute inscription.</p>
 </div>
 </section>
 <section id="debouches">
 <h2>Les débouchés professionnels</h2>
 <div class="card">
-<p>Les métiers peuvent ouvrir des possibilités d'emploi salarié, de stage ou de création d'entreprise.</p>
+<p>Selon les qualifications et l'expérience, tu peux travailler dans une entreprise, une administration, une association ou créer ta propre activité.</p>
 </div>
 </section>
 </main>
 <footer>
 <p>BURKINA METIER BF © 2026</p>
-<p>Une plateforme gratuite pour découvrir son avenir professionnel.</p>
+<p>Une plateforme gratuite pour ton avenir professionnel.</p>
 </footer>
 <script>
-const categories = {
-"Informatique et numérique":[
-"Technicien informatique","Développeur web","Administrateur réseau","Technicien en cybersécurité","Technicien de maintenance informatique"],
-"Santé":[
-"Infirmier","Sage-femme","Laborantin","Pharmacien","Technicien de santé"],
-"Agriculture et élevage":[
-"Agriculteur","Éleveur","Technicien agricole","Vétérinaire","Pisciculteur"],
-"Bâtiment et travaux publics":[
-"Maçon","Électricien bâtiment","Plombier","Menuisier","Conducteur de travaux"],
-"Communication et médias":[
-"Journaliste","Cameraman","Monteur vidéo","Photographe","Technicien audiovisuel"],
-"Commerce et gestion":[
-"Commerçant","Comptable","Secrétaire","Gestionnaire","Agent commercial"],
-"Électricité et énergie":[
-"Électricien industriel","Technicien solaire","Installateur électrique","Technicien énergie","Frigoriste"],
-"Transport et mécanique":[
-"Chauffeur professionnel","Mécanicien automobile","Conducteur d'engins","Électricien automobile","Technicien moto"],
-"Artisanat":[
-"Couturier","Soudeur","Menuisier bois","Coiffeur","Bijoutier"],
-"Hôtellerie et restauration":[
-"Cuisinier","Serveur","Réceptionniste","Pâtissier","Gestionnaire hôtelier"]
+const categories={
+"Informatique et numérique":["Technicien informatique","Développeur web","Administrateur réseau","Technicien en cybersécurité","Technicien de maintenance informatique"],
+"Santé":["Infirmier","Sage-femme","Laborantin","Pharmacien","Technicien de santé"],
+"Agriculture et élevage":["Agriculteur","Éleveur","Technicien agricole","Vétérinaire","Pisciculteur"],
+"Bâtiment et travaux publics":["Maçon","Électricien bâtiment","Plombier","Menuisier","Conducteur de travaux"],
+"Communication et médias":["Journaliste","Cameraman","Monteur vidéo","Photographe","Technicien audiovisuel"],
+"Commerce et gestion":["Commerçant","Comptable","Secrétaire","Gestionnaire","Agent commercial"],
+"Électricité et énergie":["Électricien industriel","Technicien solaire","Installateur électrique","Technicien énergie","Frigoriste"],
+"Transport et mécanique":["Chauffeur professionnel","Mécanicien automobile","Conducteur d'engins","Électricien automobile","Technicien moto"],
+"Artisanat":["Couturier","Soudeur","Menuisier bois","Coiffeur","Bijoutier"],
+"Hôtellerie et restauration":["Cuisinier","Serveur","Réceptionniste","Pâtissier","Gestionnaire hôtelier"]
 };
 let metiers=[];
 for(const categorie in categories){
 categories[categorie].forEach(nom=>metiers.push({nom,categorie}));
 }
 function afficher(){
-const recherche=document.getElementById("search").value.toLowerCase();
+const mot=document.getElementById("search").value.toLowerCase();
 const liste=document.getElementById("liste");
 liste.innerHTML="";
-metiers.filter(m=>m.nom.toLowerCase().includes(recherche)||m.categorie.toLowerCase().includes(recherche)).forEach(m=>{
+metiers.filter(m=>m.nom.toLowerCase().includes(mot)||m.categorie.toLowerCase().includes(mot)).forEach(m=>{
 const carte=document.createElement("article");
 carte.className="card";
 const titre=document.createElement("h3");
 titre.textContent=m.nom;
-const cat=document.createElement("small");
+const cat=document.createElement("p");
 cat.textContent=m.categorie;
 const bouton=document.createElement("button");
-bouton.textContent="Découvrir ce métier";
+bouton.textContent="Voir la formation";
 bouton.onclick=()=>ouvrir(m);
-carte.append(titre,cat,document.createElement("br"),bouton);
+carte.append(titre,cat,bouton);
 liste.appendChild(carte);
 });
 }
@@ -115,22 +108,35 @@ function ouvrir(m){
 const detail=document.getElementById("detail");
 detail.style.display="block";
 detail.innerHTML="";
+const contenu=[
+["Métier",m.nom],
+["Secteur",m.categorie],
+["Mission","Exercer les activités professionnelles liées à ce métier."],
+["Conditions d'accès","À vérifier selon le niveau scolaire, les prérequis et l'établissement choisi."],
+["Durée de formation","Variable selon le parcours, le diplôme et le centre de formation."],
+["Diplômes possibles","À vérifier selon le métier et le parcours reconnu : CAP, BEP, BAC professionnel, BTS ou autre qualification pertinente."],
+["Compétences à acquérir","Connaissances techniques, pratique professionnelle, rigueur et sens des responsabilités."],
+["Stages pratiques","Privilégier une formation comprenant des travaux pratiques et, si possible, un stage en entreprise."],
+["Débouchés","Emploi salarié, activité indépendante ou entrepreneuriat selon les qualifications."],
+["Conseil","Avant de t'inscrire, demande le programme, les frais, les conditions d'accès et la reconnaissance du diplôme."]
+];
 const titre=document.createElement("h2");
-titre.textContent=m.nom;
-const categorie=document.createElement("p");
-categorie.textContent="Secteur : "+m.categorie;
-const mission=document.createElement("p");
-mission.textContent="Missions : exercer les activités professionnelles propres à ce métier dans son secteur.";
-const competences=document.createElement("p");
-competences.textContent="Compétences : connaissances techniques, pratique, rigueur et sens des responsabilités.";
-const formation=document.createElement("p");
-formation.textContent="Formation : rechercher une formation professionnelle ou technique reconnue dans ce domaine au Burkina Faso.";
-const debouches=document.createElement("p");
-debouches.textContent="Débouchés : emploi en entreprise, activité indépendante ou entrepreneuriat selon les qualifications.";
-const retour=document.createElement("button");
-retour.textContent="Fermer la fiche";
-retour.onclick=()=>detail.style.display="none";
-detail.append(titre,categorie,mission,competences,formation,debouches,retour);
+titre.textContent="Fiche de formation : "+m.nom;
+detail.appendChild(titre);
+contenu.slice(1).forEach(element=>{
+const p=document.createElement("p");
+const strong=document.createElement("strong");
+strong.textContent=element[0]+" : ";
+p.append(strong,document.createTextNode(element[1]));
+detail.appendChild(p);
+});
+const note=document.createElement("p");
+note.textContent="Les informations de formation sont indicatives et doivent être confirmées auprès d'un établissement compétent.";
+detail.appendChild(note);
+const bouton=document.createElement("button");
+bouton.textContent="Fermer la fiche";
+bouton.onclick=()=>detail.style.display="none";
+detail.appendChild(bouton);
 detail.scrollIntoView({behavior:"smooth"});
 }
 afficher();
