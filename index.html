@@ -58,7 +58,54 @@ footer{background:#064d30;color:white;text-align:center;padding:25px}
 <p><strong>Important :</strong> les parcours varient selon les métiers et les établissements. Les informations doivent être confirmées avant toute inscription.</p>
 </div>
 </section>
+
 <section id="debouches">
+  
+<section id="orientation">
+  <h2>🎯 Test d'orientation professionnelle</h2>
+  <div class="card">
+    <p>Réponds aux questions pour découvrir des métiers qui pourraient te correspondre.</p>
+
+    <label for="domaine">1. Quel domaine t'intéresse ?</label>
+    <select id="domaine" style="width:100%;padding:12px;margin:10px 0">
+      <option value="">Choisir un domaine</option>
+      <option>Informatique et numérique</option>
+      <option>Santé</option>
+      <option>Agriculture et élevage</option>
+      <option>Bâtiment et travaux publics</option>
+      <option>Communication et médias</option>
+      <option>Commerce et gestion</option>
+      <option>Électricité et énergie</option>
+      <option>Transport et mécanique</option>
+      <option>Artisanat</option>
+      <option>Hôtellerie et restauration</option>
+    </select>
+
+    <label for="travail">2. Quel travail préfères-tu ?</label>
+    <select id="travail" style="width:100%;padding:12px;margin:10px 0">
+      <option value="">Choisir une préférence</option>
+      <option value="ordinateur">Travailler avec un ordinateur</option>
+      <option value="manuel">Travailler avec mes mains</option>
+      <option value="aider">Aider les personnes</option>
+      <option value="gerer">Gérer une activité</option>
+    </select>
+
+    <label for="niveau">3. Quel est ton niveau d'études ?</label>
+    <select id="niveau" style="width:100%;padding:12px;margin:10px 0">
+      <option value="">Choisir ton niveau</option>
+      <option>Aucun diplôme</option>
+      <option>CEP</option>
+      <option>BEPC</option>
+      <option>BAC</option>
+      <option>BTS ou plus</option>
+    </select>
+
+    <button onclick="orientation()">Découvrir mes métiers</button>
+    <div id="resultatOrientation" style="margin-top:20px"></div>
+  </div>
+</section>
+
+
 <h2>Les débouchés professionnels</h2>
   
 <section id="villes">
@@ -162,6 +209,51 @@ detail.appendChild(bouton);
 detail.scrollIntoView({behavior:"smooth"});
 }
 afficher();
+
+function orientation(){
+  const domaine=document.getElementById("domaine").value;
+  const travail=document.getElementById("travail").value;
+  const niveau=document.getElementById("niveau").value;
+  const resultat=document.getElementById("resultatOrientation");
+
+  resultat.innerHTML="";
+
+  if(!domaine || !travail || !niveau){
+    resultat.textContent="Merci de répondre aux trois questions.";
+    return;
+  }
+
+  let suggestions=metiers.filter(m=>m.categorie===domaine);
+
+  const correspondance={
+    ordinateur:["Technicien informatique","Développeur web","Administrateur réseau","Technicien en cybersécurité"],
+    manuel:["Maçon","Électricien bâtiment","Plombier","Mécanicien automobile","Couturier"],
+    aider:["Infirmier","Sage-femme","Technicien de santé","Enseignant"],
+    gerer:["Commerçant","Gestionnaire","Comptable","Agent commercial"]
+  };
+
+  const noms=correspondance[travail] || [];
+  const complement=metiers.filter(m=>noms.includes(m.nom));
+
+  const selection=[
+    ...suggestions.slice(0,3),
+    ...complement.filter(m=>!suggestions.some(s=>s.nom===m.nom)).slice(0,3)
+  ];
+
+  const titre=document.createElement("h3");
+  titre.textContent="Tes métiers à explorer";
+  resultat.appendChild(titre);
+
+  selection.forEach(m=>{
+    const p=document.createElement("p");
+    p.textContent="• "+m.nom+" — "+m.categorie;
+    resultat.appendChild(p);
+  });
+
+  const conseil=document.createElement("p");
+  conseil.textContent="Ton niveau d'études déclaré : "+niveau+". Vérifie les conditions d'accès et les formations nécessaires avant de choisir.";
+  resultat.appendChild(conseil);
+}
 
   
 function chercherVille(){
