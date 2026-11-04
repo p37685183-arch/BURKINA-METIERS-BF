@@ -60,6 +60,48 @@ footer{background:#064d30;color:white;text-align:center;padding:25px}
 </section>
 <section id="debouches">
 <h2>Les débouchés professionnels</h2>
+  
+<section id="villes">
+  <h2>🏫 Trouver une formation par ville</h2>
+  <div class="card">
+    <p>Choisis ta ville pour découvrir les possibilités de formation.</p>
+    <select id="ville" onchange="chercherVille()" style="width:100%;padding:13px;border-radius:8px;">
+      <option value="">-- Choisir une ville --</option>
+      <option>Ouagadougou</option>
+      <option>Bobo-Dioulasso</option>
+      <option>Koudougou</option>
+      <option>Ouahigouya</option>
+      <option>Banfora</option>
+      <option>Kaya</option>
+      <option>Fada N'Gourma</option>
+      <option>Dori</option>
+      <option>Tenkodogo</option>
+      <option>Dédougou</option>
+    </select>
+    <div id="resultatVille" style="margin-top:15px;"></div>
+  </div>
+</section>
+afficher();
+  
+function chercherVille(){
+  const ville=document.getElementById("ville").value;
+  const resultat=document.getElementById("resultatVille");
+
+  if(!ville){
+    resultat.textContent="";
+    return;
+  }
+
+  resultat.innerHTML="";
+  const titre=document.createElement("h3");
+  titre.textContent="Formations à rechercher à "+ville;
+
+  const texte=document.createElement("p");
+  texte.textContent="Consulte les centres de formation professionnelle et les établissements techniques de cette ville. Vérifie les filières proposées, les conditions d'accès et la reconnaissance des diplômes avant toute inscription.";
+
+  resultat.append(titre,texte);
+}
+
 <div class="card">
 <p>Selon les qualifications et l'expérience, tu peux travailler dans une entreprise, une administration, une association ou créer ta propre activité.</p>
 </div>
