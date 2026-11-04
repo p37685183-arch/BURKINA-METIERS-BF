@@ -162,24 +162,61 @@ detail.appendChild(bouton);
 detail.scrollIntoView({behavior:"smooth"});
 }
 afficher();
+
   
 function chercherVille(){
-  const ville=document.getElementById("ville").value;
-  const resultat=document.getElementById("resultatVille");
+  const ville = document.getElementById("ville").value;
+  const resultat = document.getElementById("resultatVille");
 
-  if(!ville){
-    resultat.textContent="";
-    return;
+  resultat.innerHTML = "";
+
+  if(!ville) return;
+
+  const titre = document.createElement("h3");
+  titre.textContent = "Établissements et formations à " + ville;
+  resultat.appendChild(titre);
+
+  if(ville === "Ouagadougou" || ville === "Bobo-Dioulasso"){
+
+    const nom = document.createElement("h4");
+    nom.textContent = "Burkina Suudu Bawdè (BSB)";
+    resultat.appendChild(nom);
+
+    const info = document.createElement("p");
+    info.textContent =
+      "Organisme public de formation professionnelle proposant plusieurs domaines et métiers.";
+    resultat.appendChild(info);
+
+    const contact = document.createElement("p");
+
+    if(ville === "Ouagadougou"){
+      contact.textContent =
+        "Adresse : 1504 Avenue Dimdolobsom, secteur 11, Dapoya 1. Téléphone : 25 30 18 75 / 25 30 18 76.";
+    } else {
+      contact.textContent =
+        "Direction inter-régionale BSB de Bobo-Dioulasso. Téléphone : 73 48 91 91. Adresse précise à confirmer auprès du centre.";
+    }
+
+    resultat.appendChild(contact);
+
+    const orientation = document.createElement("p");
+    orientation.textContent =
+      "Information et orientation professionnelle : 73 01 97 97.";
+    resultat.appendChild(orientation);
+
+  } else {
+    const info = document.createElement("p");
+    info.textContent =
+      "Consulte le portail officiel pour vérifier les centres disponibles dans cette ville et les formations proposées.";
+    resultat.appendChild(info);
   }
 
-  resultat.innerHTML="";
-  const titre=document.createElement("h3");
-  titre.textContent="Formations à rechercher à "+ville;
-
-  const texte=document.createElement("p");
-  texte.textContent="Consulte les centres de formation professionnelle et les établissements techniques de cette ville. Vérifie les filières proposées, les conditions d'accès et la reconnaissance des diplômes avant toute inscription.";
-
-  resultat.append(titre,texte);
+  const lien = document.createElement("a");
+  lien.href = "https://yupaan.bsb.gov.bf/";
+  lien.target = "_blank";
+  lien.rel = "noopener noreferrer";
+  lien.textContent = "Consulter les formations officielles de BSB";
+  resultat.appendChild(lien);
 }
 
 </script>
